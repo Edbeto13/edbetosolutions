@@ -37,6 +37,9 @@ venv.bak/
 .env.test.local
 .env.production.local
 
+# Deployment scripts (contains sensitive info)
+deploy-manual.ps1
+
 # IDE
 .vscode/
 .idea/

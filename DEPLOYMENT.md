@@ -1,212 +1,199 @@
-# EdBetoSolutions - Deployment Guide
+# 🚀 Guía de Deployment - EdBetoSolutions
 
-## 🌐 Configuración para edbetosolutions.tech
+## 📋 Información del Servidor
 
-### Estructura de Producción
+- **IP del Servidor**: `146.190.249.76`
+- **Proveedor**: DigitalOcean Droplet
+- **Sistema Operativo**: Ubuntu
+- **Ruta de Deployment**: `/var/www/html/edbetosolutions`
+- **URL del Sitio**: [https://edbetosolutions.tech](https://edbetosolutions.tech)
 
-```
-edbetosolutions.tech/
-├── index.html              # Página principal del portafolio
-├── frontend/               # Aplicaciones frontend (estáticas)
-│   ├── clima/             # Sistema meteorológico
-│   ├── llama4/            # Chat frontend
-│   ├── micveahc/          # CV interactivo
-│   └── UNEGario/          # Sistema universitario
-└── backend/               # APIs y servicios (requiere servidor)
-    └── llama4/            # API del chat con Llama 4
-```
+## 🔧 Configuración Inicial Completada
 
-## 🚀 Despliegue Frontend (Estático)
+✅ Servidor configurado y funcionando  
+✅ Dominio apuntando correctamente  
+✅ SSL configurado  
+✅ Git repository clonado  
+✅ Permisos configurados  
 
-### Opción 1: GitHub Pages
-1. Configurar repositorio como público
-2. Habilitar GitHub Pages desde `Settings > Pages`
-3. Seleccionar rama `main` como fuente
-4. El sitio estará disponible en `https://username.github.io/edbetosolutions`
+## 🚀 Deployment Manual (Recomendado)
 
-### Opción 2: Netlify
-1. Conectar repositorio a Netlify
-2. Configurar build settings:
-   - Build command: (vacío)
-   - Publish directory: `/`
-3. Configurar dominio personalizado: `edbetosolutions.tech`
+### Opción 1: SSH Directo
 
-### Opción 3: Vercel
-1. Importar proyecto desde GitHub
-2. Configurar:
-   - Framework Preset: `Other`
-   - Root Directory: `/`
-   - Build Command: (vacío)
-   - Output Directory: (vacío)
-
-## 🖥️ Despliegue Backend
-
-### Requisitos del Servidor
-- Python 3.8+
-- Puerto disponible (recomendado: 8000)
-- Variables de entorno configuradas
-
-### Configuración de Variables de Entorno
 ```bash
-# backend/llama4/.env
-NVIDIA_API_KEY=your_nvidia_api_key_here
-API_BASE_URL=https://integrate.api.nvidia.com/v1
-MODEL_NAME=meta/llama-3.1-70b-instruct
+# Conectar al servidor
+ssh -i "C:\betroplet_openssh" root@146.190.249.76
+
+# Una vez conectado, ejecutar:
+cd /var/www/html/edbetosolutions
+git pull origin main
+chown -R www-data:www-data /var/www/html/edbetosolutions
+chmod -R 755 /var/www/html/edbetosolutions
 ```
 
-### Despliegue en VPS/Cloud
-```bash
-# 1. Clonar repositorio
-git clone https://github.com/Edbeto13/edbetosolutions.git
-cd edbetosolutions
+### Opción 2: Script PowerShell Local
 
-# 2. Configurar backend
-cd backend/llama4
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# o
-venv\Scripts\activate     # Windows
-
-# 3. Instalar dependencias
-pip install -r requirements.txt
-
-# 4. Configurar variables de entorno
-cp .env.example .env
-# Editar .env con tus credenciales
-
-# 5. Ejecutar en producción
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+```powershell
+# Comando único para deployment completo
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "cd /var/www/html/edbetosolutions && git fetch origin && git reset --hard origin/main && git pull origin main && chown -R www-data:www-data /var/www/html/edbetosolutions && chmod -R 755 /var/www/html/edbetosolutions && echo 'Deployment completed successfully!'"
 ```
 
-### Usando Docker (Recomendado)
-```dockerfile
-# Dockerfile para backend/llama4
-FROM python:3.9-slim
+## 🔄 Workflow Automático (GitHub Actions)
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+### Estado Actual: ✅ SOLUCIONADO
+- ✅ **Workflow simplificado**: Solo validación y testing
+- ✅ **No más workflows atascados**: Auto-deployment deshabilitado
+- ✅ **Validaciones funcionando**: HTML, CSS, JS, estructura del proyecto
 
-COPY . .
-EXPOSE 8000
+### ¿Por qué se Cambiaron los Workflows?
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
+Los workflows automáticos se atascaban porque:
+1. **❌ Falta de SSH Secret**: GitHub no tenía acceso a la llave privada
+2. **❌ Timeouts**: Conexiones SSH fallaban ocasionalmente  
+3. **❌ Permisos**: Problemas con permisos de archivos
+4. **❌ Dependencias**: Fallos en dependencias de deployment
 
-## 🔧 Configuración DNS
+### ✅ Solución Implementada
 
-### Para edbetosolutions.tech
-```
-# Registros DNS necesarios
-A     @     IP_DEL_SERVIDOR
-CNAME www   edbetosolutions.tech
-```
-
-### Subdominios (Opcional)
-```
-A     api   IP_DEL_SERVIDOR_BACKEND    # Para api.edbetosolutions.tech
-```
-
-## 🔐 SSL/HTTPS
-
-### Certificados SSL Gratuitos
-```bash
-# Usando Certbot (Let's Encrypt)
-sudo certbot --nginx -d edbetosolutions.tech -d www.edbetosolutions.tech
-```
-
-## 📊 Monitoreo y Analytics
-
-### Google Analytics
-Agregar al `<head>` de cada página:
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
-```
-
-## 🛡️ Seguridad
-
-### Headers de Seguridad
-```nginx
-# Configuración Nginx
-add_header X-Frame-Options "SAMEORIGIN" always;
-add_header X-Content-Type-Options "nosniff" always;
-add_header X-XSS-Protection "1; mode=block" always;
-add_header Referrer-Policy "no-referrer-when-downgrade" always;
-add_header Content-Security-Policy "default-src 'self'" always;
-```
-
-## 🔄 CI/CD (Continua Integración)
-
-### GitHub Actions
 ```yaml
-# .github/workflows/deploy.yml
-name: Deploy to Production
-
+name: Build and Test  # ← Cambió de "Auto Deploy"
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  deploy:
+  build:  # ← Cambió de "deploy"
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Deploy Frontend
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
+    - name: Checkout code
+    - name: Validate HTML files      # ← Nuevo
+    - name: Validate CSS files       # ← Nuevo  
+    - name: Validate JavaScript files # ← Nuevo
+    - name: Check project structure  # ← Nuevo
+    - name: Verify documentation     # ← Nuevo
 ```
 
-## 📝 Lista de Verificación Pre-Despliegue
+## 🌐 URLs del Sitio en Producción
 
-### Frontend ✅
-- [x] Rutas actualizadas a estructura `/frontend/`
-- [x] Enlaces relativos funcionando
-- [x] Imágenes y assets optimizados
-- [x] Meta tags SEO configurados
-- [x] Responsive design verificado
+### Sitio Principal
+- **🏠 Landing Page**: https://edbetosolutions.tech/
+- **🎯 Portafolio Completo**: https://edbetosolutions.tech/frontend/Portafolio/
 
-### Backend ✅
-- [x] Variables de entorno configuradas
-- [x] CORS habilitado para dominio de producción
-- [x] Rate limiting implementado
-- [x] Logs configurados
-- [x] Health check endpoint disponible
+### Aplicaciones Individuales
+- **🌦️ Sistema Meteorológico**: https://edbetosolutions.tech/frontend/clima/
+- **🦙 Chat con Llama 4**: https://edbetosolutions.tech/frontend/llama4/
+- **👨‍💼 CV Web Interactivo**: https://edbetosolutions.tech/frontend/micveahc/
+- **📚 Sistema Universitario**: https://edbetosolutions.tech/frontend/UNEGario/
 
-### Seguridad ✅
-- [x] API keys en variables de entorno
-- [x] HTTPS configurado
-- [x] Headers de seguridad implementados
-- [x] Validación de entrada en APIs
+## 🔐 Configuración SSH (Opcional para Auto-deployment)
 
-## 🆘 Troubleshooting
+Si en el futuro quieres restaurar el auto-deployment:
 
-### Problemas Comunes
+### 1. Agregar SSH Key a GitHub Secrets
 
-1. **Error 404 en rutas frontend**
-   - Verificar que las rutas en `index.html` apunten a `/frontend/`
+1. Ve a tu repositorio en GitHub
+2. `Settings > Secrets and variables > Actions`
+3. Crea un nuevo secret llamado: `DO_SSH_PRIVATE_KEY`
+4. Copia el contenido completo de `C:\betroplet_openssh`
 
-2. **CORS error en API**
-   - Configurar origins permitidos en FastAPI backend
+### 2. Restaurar Workflow Original
 
-3. **SSL certificate error**
-   - Renovar certificado Let's Encrypt
+```yaml
+- name: Setup SSH
+  uses: webfactory/ssh-agent@v0.7.0
+  with:
+    ssh-private-key: ${{ secrets.DO_SSH_PRIVATE_KEY }}
 
-4. **Backend no responde**
-   - Verificar que el servicio esté ejecutándose
-   - Comprobar firewall y puertos abiertos
+- name: Deploy to DigitalOcean
+  run: |
+    ssh -o StrictHostKeyChecking=no root@146.190.249.76 << 'EOF'
+      cd /var/www/html/edbetosolutions
+      git pull origin main
+      # ... resto del deployment
+    EOF
+```
 
-## 📞 Soporte
+## 🚨 Solución a Workflows Atascados
 
-- **Email**: edbeto13@gmail.com
-- **GitHub Issues**: https://github.com/Edbeto13/edbetosolutions/issues
-- **Documentación**: Ver READMEs específicos de cada proyecto
+### ✅ Pasos Implementados
+
+1. **Workflow Simplificado**: Removido auto-deployment problemático
+2. **Solo Validaciones**: Testing y verificación de estructura
+3. **Sin SSH Dependencies**: No requiere llaves ni conexiones externas
+4. **Deployment Manual**: Control total sobre cuándo y cómo hacer deploy
+
+### 🔧 Comandos de Deployment Manual
+
+```powershell
+# Comando completo (copia y pega esto)
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "cd /var/www/html/edbetosolutions && echo 'Starting deployment...' && git fetch origin && git reset --hard origin/main && git pull origin main && chown -R www-data:www-data /var/www/html/edbetosolutions && chmod -R 755 /var/www/html/edbetosolutions && find /var/www/html/edbetosolutions -type f -exec chmod 644 {} \; && echo '✅ Deployment completed successfully!' && echo '🌐 Site available at: https://edbetosolutions.tech'"
+```
+
+### 🔍 Verificación del Deployment
+
+```powershell
+# Verificar que el sitio esté funcionando
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "curl -I http://localhost && echo 'Server status check completed'"
+```
+
+## 📊 Monitoreo del Servidor
+
+### Estado del Servidor
+```bash
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "systemctl status nginx"
+```
+
+### Logs en Tiempo Real
+```bash
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "tail -f /var/log/nginx/access.log"
+```
+
+### Espacio en Disco
+```bash
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "df -h"
+```
+
+## 🚨 Troubleshooting
+
+### Problemas de Conexión SSH
+```powershell
+# Test de conexión básica
+ssh -i "C:\betroplet_openssh" root@146.190.249.76 "echo 'Conexión SSH exitosa'"
+```
+
+### Problemas de Permisos
+```bash
+# Ejecutar en el servidor si hay problemas de permisos
+sudo chown -R www-data:www-data /var/www/html/edbetosolutions
+sudo chmod -R 755 /var/www/html/edbetosolutions
+sudo find /var/www/html/edbetosolutions -type f -exec chmod 644 {} \;
+```
+
+### Conflictos de Git
+```bash
+# Si hay conflictos de Git en el servidor
+cd /var/www/html/edbetosolutions
+git fetch origin
+git reset --hard origin/main
+git pull origin main
+```
+
+### Cancelar Workflows Atascados (si aún los tienes)
+1. Ve a tu repositorio en GitHub
+2. Click en la pestaña "Actions"
+3. Click en los workflows en ejecución
+4. Click "Cancel workflow"
+
+---
+
+## ✅ Resumen de la Solución
+
+**🎯 Problema Original**: Workflows de GitHub Actions atascados en deployment automático  
+**🔧 Solución Implementada**: Workflow simplificado sin auto-deployment  
+**🚀 Resultado**: Sin más workflows atascados + deployment manual confiable  
+**🌐 Estado**: Sitio funcionando perfectamente en https://edbetosolutions.tech  
+
+**📅 Fecha de solución**: Enero 2025  
+**👨‍💻 Implementado por**: Edson Alberto Herrera Cervantes
