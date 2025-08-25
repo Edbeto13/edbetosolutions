@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Clima CDMX - Sistema Conagua (PRODUCTION)</title>
+    <link rel="icon" type="image/png" href="../micveahc/assets/HydredLogo.png">
+    <meta name="description" content="Sistema de monitoreo meteorológico en tiempo real para las 16 alcaldías de la Ciudad de México">
+    <meta name="keywords" content="clima, CDMX, Mexico, Conagua, meteorologia, tiempo">
+    <link rel="stylesheet" href="styles-fixed.css">
+    <!-- Chart.js para gráficos de series temporales -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Model Viewer para modelos 3D -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-logo">
+                <img src="../micveahc/assets/HydredLetras.png" alt="Hydred" class="logo-letras">
+                <span class="sistema-text">Sistema de Monitoreo Meteorológico</span>
+            </div>
+            <p class="subtitle">Ciudad de México</p>
+            <div id="status" class="status-bar">🔄 Iniciando sistema...</div>
+            <div id="timestamp" class="timestamp"></div>
+        </header>
+
+        <main>
+            <section class="controls">
+                <div class="control-group">
+                    <label for="alcaldia-select">📍 Selecciona una Alcaldía:</label>
+                    <select id="alcaldia-select" title="Seleccionar alcaldía">
+                        <option value="cdmx">Ciudad de México (Centro)</option>
+                        <option value="alvaro-obregon">Álvaro Obregón</option>
+                        <option value="azcapotzalco">Azcapotzalco</option>
+                        <option value="benito-juarez">Benito Juárez</option>
+                        <option value="coyoacan">Coyoacán</option>
+                        <option value="cuajimalpa">Cuajimalpa</option>
+                        <option value="gustavo-madero">Gustavo A. Madero</option>
+                        <option value="iztacalco">Iztacalco</option>
+                        <option value="iztapalapa">Iztapalapa</option>
+                        <option value="magdalena-contreras">La Magdalena Contreras</option>
+                        <option value="miguel-hidalgo">Miguel Hidalgo</option>
+                        <option value="milpa-alta">Milpa Alta</option>
+                        <option value="tlahuac">Tláhuac</option>
+                        <option value="tlalpan">Tlalpan</option>
+                        <option value="venustiano-carranza">Venustiano Carranza</option>
+                        <option value="xochimilco">Xochimilco</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="weather-grid">
+                <div class="weather-card">
+                    <span class="weather-icon">🌡️</span>
+                    <div class="weather-value" id="temperatura">--°C</div>
+                    <div class="weather-label">Temperatura</div>
+                </div>
+                <div class="weather-card">
+                    <span class="weather-icon">💧</span>
+                    <div class="weather-value" id="humedad">--%</div>
+                    <div class="weather-label">Humedad</div>
+                </div>
+                <div class="weather-card">
+                    <span class="weather-icon">🌪️</span>
+                    <div class="weather-value" id="viento">-- km/h</div>
+                    <div class="weather-label">Viento</div>
+                </div>
+                <div class="weather-card">
+                    <span class="weather-icon">☔</span>
+                    <div class="weather-value" id="precipitacion">-- mm</div>
+                    <div class="weather-label">Precipitación</div>
+                </div>
+            </section>
+
+            <section class="forecast-section">
+                <h2 class="forecast-title">📅 Pronóstico del Tiempo</h2>
+                <div id="pronostico" class="loading">🔄 Cargando pronóstico...</div>
+            </section>
+
+            <section class="info-section">
+                <h3>📊 Información de la Estación</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Estación:</span>
+                        <span class="info-value" id="station-name">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Actualización:</span>
+                        <span class="info-value" id="last-update">--</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Fuente:</span>
+                        <span class="info-value" id="data-source">Conagua/SMN</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="timeseries-section">
+                <div class="timeseries-title">
+                    <h2>📈 Series Temporales</h2>
+                    <div class="timeseries-controls">
+                        <select id="timeseries-period" title="Seleccionar período">
+                            <option value="12">Últimas 12 horas</option>
+                            <option value="24" selected>Últimas 24 horas</option>
+                            <option value="48">Últimas 48 horas</option>
+                            <option value="72">Últimas 72 horas</option>
+                        </select>
+                        <select id="timeseries-metric" title="Seleccionar métrica">
+                            <option value="temp">Temperatura</option>
+                            <option value="pp">Precipitación</option>
+                            <option value="humedad">Humedad</option>
+                            <option value="viento">Viento</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="chart-container" class="chart-container">
+                    <canvas id="timeseries-chart"></canvas>
+                </div>
+                <div class="timeseries-info">
+                    <span id="timeseries-points">0 puntos de datos</span>
+                    <span id="timeseries-updated">Última actualización: --</span>
+                </div>
+            </section>
+            
+            <section class="models-section">
+                <h2 class="models-title">🌐 Visualizaciones 3D</h2>
+                <div id="models-container">
+                    <!-- Los modelos 3D se cargarán dinámicamente aquí -->
+                    <div class="loading">🔄 Cargando modelos 3D...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p><strong>EdbETO Solutions</strong> • Sistema Conagua CDMX</p>
+            <p>Datos meteorológicos actualizados cada 75 minutos desde el Servicio Meteorológico Nacional</p>
+            <div class="footer-links">
+                <a href="/health" target="_blank">📊 Estado del API</a>
+                <a href="/api/weather/status" target="_blank">⚙️ Estado del Sistema</a>
+                <a href="/diagnostico.html" target="_blank">🔧 Diagnóstico</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script-fixed.js"></script>
+</body>
+</html>

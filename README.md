@@ -1,60 +1,51 @@
-# edbetosolutions Â· Clima CDMX
+# EdbETO Solutions - Frontend Components
 
-## Estructura
-```
-etl/                    # scripts de extracciÃ³n/transformaciÃ³n
-web/                    # frontend estÃ¡tico (raÃ­z del sitio)
-  â”œâ”€ index.html
-  â”œâ”€ styles.css
-  â”œâ”€ app.js
-  â””â”€ chatbot/bot.js
-data/                   # salidas JSON del ETL (expuestas a /data/)
-scripts/
-  â””â”€ deploy_symlinks.sh
-```
+Este repositorio contiene los componentes frontend desarrollados por EdbETO Solutions.
 
-## Requisitos
-- Python 3.11+ (`zoneinfo` estÃ¡ndar)
-- `pip install requests`
+##  Estructura del Repositorio
 
-## Generar datos
-Desde la raÃ­z:
-```bash
-python etl/fetch_conagua_cdmx.py
-```
-Esto crea:
-- `data/latest_conagua_cdmx.json`
-- `data/snapshots/conagua_*.json`
+`
+.
+ clima/                   # Aplicación de monitoreo meteorológico CDMX
+    clima-production.html # Interfaz principal
+    script-fixed.js      # Lógica JavaScript
+    READMEclima.md       # Documentación específica
+    ...
 
-## Exponer datos al frontend
-```bash
-bash scripts/deploy_symlinks.sh
-```
-Sirve **web/** como raÃ­z. El frontend lee `./data/latest_conagua_cdmx.json`.
+ micveahc/                # Currículum Vitae Web
+    micveahc.html        # Página principal HTML
+    micveahc.js          # Funcionalidad JavaScript
+    READMEmicveahc.md    # Documentación específica
+    ...
 
-### Nginx (ejemplo)
-```
-server {
-  server_name edbetosolutions.tech;
-  root /var/www/edbetosolutions/web;
+ UNEGario/                # Sistema de Gestión de Horarios Universitarios
+     UNEGario.html        # Página principal
+     unegario.js          # Lógica JavaScript
+     READMEunegario.md    # Documentación específica
+     ...
+`
 
-  location / { try_files $uri /index.html; }
-  # (Opcional) Si prefieres sin symlink:
-  # location /data/ { alias /var/www/edbetosolutions/data/; autoindex off; }
-}
-```
+##  Documentación
 
-## ActualizaciÃ³n automÃ¡tica
-Cada 90 min con cron:
-```
-*/90 * * * * cd /var/www/edbetosolutions && /usr/bin/python3 etl/fetch_conagua_cdmx.py >> log.txt 2>&1
-```
+Para información específica sobre cada componente, consulta los archivos README correspondientes:
 
-## Desarrollo local
-```bash
-python etl/fetch_conagua_cdmx.py
-bash scripts/deploy_symlinks.sh
-# servidor estÃ¡tico rÃ¡pido:
-python -m http.server -d web 8080
-# abrir http://localhost:8080
-```
+- [Documentación de Clima](./clima/READMEclima.md)
+- [Documentación de MicVeaHC](./micveahc/READMEmicveahc.md)
+- [Documentación de UNEGario](./UNEGario/READMEunegario.md)
+
+##  Características Generales
+
+- **Diseño Responsive**: Todos los componentes están optimizados para diferentes tamaños de pantalla
+- **JavaScript Moderno**: Uso de ES6+ y técnicas modernas de desarrollo frontend
+- **Visualizaciones Avanzadas**: Gráficos, mapas y elementos visuales interactivos
+- **Integración con API**: Comunicación con backends para datos dinámicos
+
+##  Licencia
+
+Este proyecto está licenciado bajo la [Licencia MIT](LICENSE) - consulta el archivo LICENSE para más detalles.
+
+---
+
+**Desarrollado por EdbETO Solutions**
+
+ 2025 Edson Herrera

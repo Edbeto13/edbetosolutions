@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edson Alberto Herrera Cervantes - CV Profesional · EdbETO Solutions</title>
+    <link rel="icon" type="image/png" href="assets/HydredLogo.png">
+    <meta name="description" content="CV profesional de Edson Alberto Herrera Cervantes - Desarrollador Full Stack, especialista en sistemas meteorológicos y soluciones cloud.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Edson Alberto Herrera Cervantes - CV Profesional">
+    <meta property="og:description" content="Desarrollador Full Stack especializado en sistemas meteorológicos y soluciones cloud">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://edbetosolutions.tech/micveahc">
+    
+    <link rel="stylesheet" href="micveahc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header con navegación -->
+        <header class="cv-header">
+            <div class="header-content">
+                <div class="profile-summary">
+                    <div class="profile-photo">
+                        <img src="assets/profile-photo.jpg" alt="Edson Alberto Herrera Cervantes" onerror="this.style.display='none';">
+                        <div class="photo-placeholder">EH</div>
+                    </div>
+                    <div class="profile-info">
+                        <h1>Edson Alberto Herrera Cervantes</h1>
+                        <p class="title">Desarrollador Full Stack & Especialista Cloud</p>
+                        <div class="contact-info">
+                            <span><i class="fas fa-envelope" aria-hidden="true"></i> edbeto13@gmail.com</span>
+                            <span><i class="fas fa-envelope" aria-hidden="true"></i> edson.herrera2456@uneg.edu.mx</span>
+                            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Ciudad de México, México</span>
+                            <span><i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/edbeto13/" target="_blank" rel="noopener">linkedin.com/in/edbeto13</a></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button id="download-cv-btn" class="download-btn" aria-label="Descargar CV en PDF">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        Descargar PDF
+                    </button>
+                    <button id="print-cv-btn" class="print-btn" aria-label="Imprimir CV">
+                        <i class="fas fa-print" aria-hidden="true"></i>
+                        Imprimir
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Navegación interna -->
+            <nav class="cv-navigation" role="navigation" aria-label="Navegación del CV">
+                <ul>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#educacion">Educación</a></li>
+                    <li><a href="#habilidades">Habilidades</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#certificaciones">Certificaciones</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="cv-content">
+            <!-- Perfil Profesional -->
+            <section id="perfil" class="cv-section">
+                <h2><i class="fas fa-user-tie" aria-hidden="true"></i> Perfil Profesional</h2>
+                <div class="section-content">
+                    <p>Desarrollador Full Stack de 21 años especializado en sistemas meteorológicos, APIs REST, y soluciones cloud. Estudiante de Ingeniería en Inteligencia Artificial en Universidad ISEC. Creador del sistema HydredelBack para datos meteorológicos de CDMX. Certificado en tecnologías como Python, Networking (Cisco), Cybersecurity (Fortinet), y LLM Applications (NVIDIA).</p>
+                    
+                    <div class="highlights">
+                        <div class="highlight-item">
+                            <strong>� Estudiante IA</strong>
+                            <span>Universidad ISEC (cursando)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <strong>�🌐 Sistemas Web</strong>
+                            <span>Frontend/Backend completos</span>
+                        </div>
+                        <div class="highlight-item">
+                            <strong>☁️ Cloud Solutions</strong>
+                            <span>DigitalOcean, nginx, SSL</span>
+                        </div>
+                        <div class="highlight-item">
+                            <strong>🌤️ APIs Meteorológicas</strong>
+                            <span>Integración CONAGUA/SMN</span>
+                        </div>
+                        <div class="highlight-item">
+                            <strong>🏆 8 Certificaciones</strong>
+                            <span>Cisco, IBM, NVIDIA, Fortinet</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiencia Laboral -->
+            <section id="experiencia" class="cv-section">
+                <h2><i class="fas fa-briefcase" aria-hidden="true"></i> Experiencia Laboral</h2>
+                <div class="section-content">
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <h3>Fundador & Desarrollador Principal</h3>
+                            <div class="job-meta">
+                                <span class="company">EdbETO Solutions</span>
+                                <span class="period">2023 - Presente</span>
+                                <span class="location">Ciudad de México, México</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Desarrollo del sistema <strong>HydredelBack</strong> - plataforma meteorológica para 16 alcaldías de CDMX</li>
+                                <li>Arquitectura completa: Python FastAPI + JavaScript vanilla + nginx</li>
+                                <li>Integración con APIs gubernamentales (CONAGUA/SMN) con actualización automática cada 75 minutos</li>
+                                <li>Deployment en DigitalOcean con SSL automatizado y monitoreo 24/7</li>
+                                <li>Sistema de caché inteligente y datos fallback para alta disponibilidad</li>
+                            </ul>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">nginx</span>
+                                <span class="tech-tag">Ubuntu</span>
+                                <span class="tech-tag">DigitalOcean</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-header">
+                            <h3>Desarrollador Full Stack</h3>
+                            <div class="job-meta">
+                                <span class="company">Proyectos Independientes</span>
+                                <span class="period">2020 - 2023</span>
+                                <span class="location">Remoto</span>
+                            </div>
+                        </div>
+                        <div class="job-description">
+                            <ul>
+                                <li>Desarrollo de aplicaciones web responsive con HTML5, CSS3, JavaScript</li>
+                                <li>Implementación de APIs REST y sistemas de autenticación</li>
+                                <li>Optimización de performance y SEO para mejor experiencia de usuario</li>
+                                <li>Integración de servicios de terceros y manejo de bases de datos</li>
+                            </ul>
+                            
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Educación -->
+            <section id="educacion" class="cv-section">
+                <h2><i class="fas fa-graduation-cap" aria-hidden="true"></i> Educación</h2>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Ingeniería en Inteligencia Artificial</h3>
+                            <div class="education-meta">
+                                <span class="institution">Universidad de Negocios ISEC</span>
+                                <span class="period">2023 - Presente</span>
+                                <span class="status">Cursando</span>
+                            </div>
+                        </div>
+                        <p>Especialización en machine learning, deep learning, procesamiento de lenguaje natural y sistemas inteligentes.</p>
+                        <ul class="education-details">
+                            <li>Desarrollo de modelos de IA y ML</li>
+                            <li>Arquitecturas de redes neuronales</li>
+                            <li>Procesamiento de datos masivos</li>
+                            <li>Ética en inteligencia artificial</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Técnico en Instalaciones y Mantenimiento Eléctrico</h3>
+                            <div class="education-meta">
+                                <span class="institution">CECyT 7 "Cuauhtémoc" - IPN</span>
+                                <span class="period">2019 - 2022</span>
+                                <span class="status">Concluido</span>
+                            </div>
+                        </div>
+                        <p>Formación técnica especializada en sistemas eléctricos, instalaciones industriales y mantenimiento preventivo.</p>
+                        <ul class="education-details">
+                            <li>Sistemas eléctricos industriales</li>
+                            <li>Automatización y control</li>
+                            <li>Mantenimiento preventivo y correctivo</li>
+                            <li>Normatividad eléctrica nacional</li>
+                        </ul>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Educación Secundaria</h3>
+                            <div class="education-meta">
+                                <span class="institution">ESANS (Escuela Secundaria)</span>
+                                <span class="period">2016 - 2019</span>
+                                <span class="status">Concluido</span>
+                            </div>
+                        </div>
+                        <p>Formación académica básica con enfoque en ciencias exactas y desarrollo de competencias fundamentales.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section id="habilidades" class="cv-section">
+                <h2><i class="fas fa-code" aria-hidden="true"></i> Habilidades Técnicas</h2>
+                <div class="section-content">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Frontend</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <span>HTML5/CSS3</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-95" data-width="95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>JavaScript</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-90" data-width="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>Responsive Design</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-92" data-width="92%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Backend</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <span>Python</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-95" data-width="95%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>FastAPI</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-90" data-width="90%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>REST APIs</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-88" data-width="88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>DevOps & Cloud</h3>
+                            <div class="skills-list">
+                                <div class="skill-item">
+                                    <span>Linux/Ubuntu</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-85" data-width="85%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>nginx</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-82" data-width="82%"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span>DigitalOcean</span>
+                                    <div class="skill-level">
+                                        <div class="skill-bar level-88" data-width="88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Proyectos Destacados -->
+            <section id="proyectos" class="cv-section">
+                <h2><i class="fas fa-rocket" aria-hidden="true"></i> Proyectos Destacados</h2>
+                <div class="section-content">
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3>🌤️ HydredelBack</h3>
+                                <div class="project-links">
+                                    <a href="https://edbetosolutions.tech" target="_blank" rel="noopener" aria-label="Ver proyecto HydredelBack">
+                                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="https://github.com/Edbeto13/Hydredelback" target="_blank" rel="noopener" aria-label="Código fuente en GitHub">
+                                        <i class="fab fa-github" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>Sistema meteorológico completo para CDMX con 16 alcaldías. Integración CONAGUA/SMN, actualización automática, interfaz responsive y deployment profesional.</p>
+                            <div class="project-tech">
+                                <span>Python</span>
+                                <span>FastAPI</span>
+                                <span>JavaScript</span>
+                                <span>nginx</span>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-header">
+                                <h3>🔧 EdbETO Solutions API</h3>
+                                <div class="project-links">
+                                    <a href="https://edbetosolutions.tech/api/" target="_blank" rel="noopener" aria-label="Ver API documentation">
+                                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>API backend robusta con documentación automática, rate limiting, monitoreo y alta disponibilidad. Arquitectura escalable y modular.</p>
+                            <div class="project-tech">
+                                <span>REST API</span>
+                                <span>OpenAPI</span>
+                                <span>Rate Limiting</span>
+                                <span>SSL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificaciones -->
+            <section id="certificaciones" class="cv-section">
+                <h2><i class="fas fa-certificate" aria-hidden="true"></i> Certificaciones</h2>
+                <div class="section-content">
+                    <div class="certifications-grid">
+                        <!-- Cisco Networking Academy -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/networking-basics.png" 
+                                     alt="Cisco Networking Basics Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>Networking Basics</h3>
+                                <p>Cisco Networking Academy - Fundamentos de redes verificado</p>
+                                <span class="cert-provider">Cisco</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Fortinet Cybersecurity -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/fortinet-certified-fundamentals-cybersecurity.png" 
+                                     alt="Fortinet Cybersecurity Fundamentals Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>Cybersecurity Fundamentals</h3>
+                                <p>Fortinet Certified - Fundamentos de ciberseguridad</p>
+                                <span class="cert-provider">Fortinet</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Getting Started in Cybersecurity -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/getting-started-in-cybersecurity-3-0.png" 
+                                     alt="Getting Started in Cybersecurity Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>Getting Started in Cybersecurity</h3>
+                                <p>Certificación introductoria en ciberseguridad</p>
+                                <span class="cert-provider">Cisco</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- NVIDIA LLM Applications -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/BuildLLMAplicationsNVIDIA.png" 
+                                     alt="NVIDIA LLM Applications Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>Building LLM Applications</h3>
+                                <p>NVIDIA - Desarrollo de aplicaciones con modelos de lenguaje</p>
+                                <span class="cert-provider">NVIDIA</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Python Essentials -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/python-essentials-1.1.png" 
+                                     alt="Python Essentials Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>Python Essentials 1</h3>
+                                <p>Fundamentos de programación Python - Nivel 1</p>
+                                <span class="cert-provider">Python Institute</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- AI Fundamentals -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/artificial-intelligence-fundamentals-with-capstone-.png" 
+                                     alt="AI Fundamentals with Capstone Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>AI Fundamentals with Capstone</h3>
+                                <p>Fundamentos de Inteligencia Artificial con proyecto final</p>
+                                <span class="cert-provider">IBM</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- Credencial adicional -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/6c4d4ab7-5103-47e2-8524-c421913512fd.png" 
+                                     alt="Professional Certification Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>Professional Certification</h3>
+                                <p>Certificación profesional verificada</p>
+                                <span class="cert-provider">Verificado</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+
+                        <!-- IBM Cloud Essentials (existente) -->
+                        <div class="cert-item featured-cert">
+                            <div class="cert-badge">
+                                <img src="assets/credentials/artificial-intelligence-fundamentals-with-capstone-.png" 
+                                     alt="IBM Cloud Essentials Badge" 
+                                     class="credly-badge"
+                                     onerror="this.style.display='none';">
+                            </div>
+                            <div class="cert-info">
+                                <h3>IBM Cloud Essentials</h3>
+                                <p>Certificación verificada por IBM en fundamentos de cloud computing</p>
+                                <a href="https://www.credly.com/badges/7194efa0-86f9-4cb0-ad33-da30004074fa/public_url" 
+                                   target="_blank" rel="noopener" class="cert-verify">
+                                    <i class="fas fa-external-link-alt"></i> Verificar en Credly
+                                </a>
+                                <span class="cert-year">2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Idiomas -->
+            <section id="idiomas" class="cv-section">
+                <h2><i class="fas fa-language" aria-hidden="true"></i> Idiomas</h2>
+                <div class="section-content">
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <div class="language-info">
+                                <h3>Español</h3>
+                                <span class="language-level">Nativo</span>
+                            </div>
+                            <div class="language-progress">
+                                <div class="language-bar level-100" data-width="100%"></div>
+                            </div>
+                        </div>
+
+                        <div class="language-item">
+                            <div class="language-info">
+                                <h3>Inglés</h3>
+                                <span class="language-level">Intermedio</span>
+                            </div>
+                            <div class="language-progress">
+                                <div class="language-bar level-65" data-width="65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contacto -->
+            <section id="contacto" class="cv-section">
+                <h2><i class="fas fa-address-card" aria-hidden="true"></i> Información de Contacto</h2>
+                <div class="section-content">
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <strong>Email Personal</strong>
+                                <a href="mailto:edbeto13@gmail.com">edbeto13@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <strong>Email Universitario</strong>
+                                <a href="mailto:edson.herrera2456@uneg.edu.mx">edson.herrera2456@uneg.edu.mx</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <a href="https://www.linkedin.com/in/edbeto13/" target="_blank" rel="noopener">linkedin.com/in/edbeto13</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <div>
+                                <strong>GitHub</strong>
+                                <a href="https://github.com/Edbeto13" target="_blank" rel="noopener">github.com/Edbeto13</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-globe" aria-hidden="true"></i>
+                            <div>
+                                <strong>Website</strong>
+                                <a href="https://edbetosolutions.tech" target="_blank" rel="noopener">edbetosolutions.tech</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <span>Ciudad de México, México</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cv-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Edson Alberto Herrera Cervantes - EdbETO Solutions. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="https://edbetosolutions.tech" rel="noopener">Inicio</a>
+                    <a href="https://edbetosolutions.tech/api/" rel="noopener">API</a>
+                    <a href="#download-cv-btn">Descargar PDF</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="micveahc.js"></script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Edson Alberto Herrera Cervantes",
+        "jobTitle": "Desarrollador Full Stack",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "EdbETO Solutions"
+        },
+        "url": "https://edbetosolutions.tech/micveahc",
+        "sameAs": [
+            "https://www.linkedin.com/in/edbeto13/",
+            "https://github.com/Edbeto13",
+            "https://edbetosolutions.tech"
+        ],
+        "email": "edbeto13@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Ciudad de México",
+            "addressCountry": "México"
+        }
+    }
+    </script>
+</body>
+</html>
