@@ -1,10 +1,29 @@
 # 🚀 EdBetoSolutions
 
-**Sitio web oficial** - [edbetosolutions.tech](https://edbetosolutions.tech)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fedbetosolutions.tech)](https://edbetosolutions.tech)
+[![License](https://img.shields.io/github/license/Edbeto13/edbetosolutions)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/Edbeto13/edbetosolutions)](https://github.com/Edbeto13/edbetosolutions/commits/main)
 
-Portafolio profesional de soluciones tecnológicas innovadoras, aplicaciones web interactivas y sistemas inteligentes desarrollados por **Edson Alberto Herrera Cervantes**.
+> 🌐 **[edbetosolutions.tech](https://edbetosolutions.tech)** - Portafolio profesional de soluciones tecnológicas innovadoras
 
-🔄 **Deployment automático activo** - Última actualización: Enero 2025
+Colección de aplicaciones web interactivas y sistemas inteligentes desarrollados por **Edson Alberto Herrera Cervantes**, incluyendo sistemas meteorológicos, chatbots con IA, gestión universitaria y herramientas de productividad.
+
+## 🌟 Aplicaciones Disponibles
+
+| 🎯 **Aplicación** | � **URL** | 📝 **Descripción** |
+|---|---|---|
+| **Portafolio Principal** | [edbetosolutions.tech](https://edbetosolutions.tech) | Portal principal con todos los proyectos |
+| **Sistema Meteorológico** | [edbetosolutions.tech/clima](https://edbetosolutions.tech/clima) | Pronósticos CDMX con modelos 3D |
+| **Chat IA Llama 4** | [edbetosolutions.tech/llama4](https://edbetosolutions.tech/llama4) | Chatbot con NVIDIA NIM |
+| **CV Interactivo** | [edbetosolutions.tech/micveahc](https://edbetosolutions.tech/micveahc) | Curriculum vitae web profesional |
+| **UNEGario** | [edbetosolutions.tech/UNEGario](https://edbetosolutions.tech/UNEGario) | Sistema universitario con Google Calendar |
+
+## ⚡ Tecnologías Principales
+
+- **Frontend**: HTML5, CSS3, JavaScript ES6+, Three.js
+- **Backend**: Python, Flask, NVIDIA NIM APIs  
+- **Integración**: Google Calendar API, CONAGUA API
+- **Infraestructura**: DigitalOcean, Nginx, SSL/HTTPS
 
 ## 📁 Estructura del Proyecto
 
@@ -205,10 +224,65 @@ npm test         # Ejecutar tests (cuando estén disponibles)
 - ⏳ **Planeado**: En fase de planificación
 - 🔧 **Mantenimiento**: Actualizaciones menores
 
-## 🔗 Enlaces Importantes
+## � Instalación y Desarrollo Local
 
-### Sitio Web
-- **🏠 Sitio Principal**: [edbetosolutions.tech](https://edbetosolutions.tech)
+### Prerrequisitos
+- Node.js 18+ 
+- Python 3.8+
+- Git
+
+### Clonar el Repositorio
+```bash
+git clone https://github.com/Edbeto13/edbetosolutions.git
+cd edbetosolutions
+```
+
+### Configuración del Backend
+```bash
+cd backend
+pip install -r requirements.txt
+python api_server.py  # Puerto 8000
+```
+
+### Configuración del Frontend
+```bash
+# Servir archivos estáticos
+npx serve frontend/Portafolio -p 8080
+# O usar cualquier servidor HTTP
+python -m http.server 8080
+```
+
+## 📚 Documentación
+
+Para documentación técnica detallada, consulta la carpeta [`docs/`](docs/) que incluye:
+
+- 🚀 **Guías de Deployment**
+- 🔍 **Diagnósticos del Servidor** 
+- �️ **Estructura del Proyecto**
+- 🐍 **Configuración NVIDIA NIM**
+
+## 🤝 Contribuciones
+
+Este es un proyecto de portafolio personal, pero las sugerencias y feedback son bienvenidos:
+
+1. Abre un Issue para reportar bugs o sugerir mejoras
+2. Fork el proyecto para contribuciones
+3. Crea un Pull Request con tus cambios
+
+## 📝 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
+
+## 👨‍💻 Autor
+
+**Edson Alberto Herrera Cervantes**
+- 🌐 Website: [edbetosolutions.tech](https://edbetosolutions.tech)
+- 💼 LinkedIn: [Perfil profesional](https://edbetosolutions.tech/micveahc)
+- 📧 Contacto: A través del sitio web
+
+---
+
+⭐ Si este proyecto te resulta útil, ¡dale una estrella!
 - **📧 Email**: [edbeto13@gmail.com](mailto:edbeto13@gmail.com)
 
 ### Desarrollo

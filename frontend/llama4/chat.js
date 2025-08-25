@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let isProcessing = false;
     const MAX_CHARS = 2000;
     
-    // URL del backend - ajustar según configuración
-    const BACKEND_URL = 'http://localhost:8000';
+    // URL del backend - usando nginx proxy
+    const BACKEND_URL = 'https://edbetosolutions.tech';
     
     // Inicialización
     init();
@@ -38,8 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
     
     async function checkServiceStatus() {
         try {
+            // Verificar estado general
             const response = await fetch(`${BACKEND_URL}/api/status`);
             const status = await response.json();
+            
+            // Verificar estado específico del chat
+            const chatResponse = await fetch(`${BACKEND_URL}/api/chat/status`);
+            
+            if (chatResponse.status === 503) {
+                // Chat no disponible
+                const chatStatus = await chatResponse.json();
+                updateStatusIndicator(false, `Chat no disponible: ${chatStatus.reason || 'Servicio no configurado'}`);
+                
+                // Deshabilitar input y botón
+                userInput.disabled = true;
+                sendButton.disabled = true;
+                userInput.placeholder = 'Servicio de chat temporalmente no disponible...';
+                
+                return;
+            }
             
             updateStatusIndicator(status.status === 'ok', status.message || 'Servicio disponible');
             
@@ -191,25 +208,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     async function sendToAPI(messages) {
-        const response = await fetch(`${BACKEND_URL}/api/chat`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                messages: messages,
-                stream: false,
-                temperature: 0.7,
-                max_tokens: 512
-            })
-        });
-        
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw new Error(errorData.detail || `Error HTTP: ${response.status}`);
+        try {
+            console.log('[LOG] Enviando mensaje a Llama 4 (NVIDIA NIM):', messages);
+            
+            const response = await fetch(`${BACKEND_URL}/api/chat`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    messages: messages,
+                    stream: false,
+                    temperature: 0.7,
+                    max_tokens: 800
+                })
+            });
+
+            if (response.status === 503) {
+                console.log('[ERROR] Servicio temporalmente no disponible');
+                throw new Error('⚠️ Servicio de chat temporalmente no disponible. Por favor, inténtalo más tarde.');
+            }
+
+            if (response.status === 502) {
+                console.log('[ERROR] Error de conexión con NVIDIA NIM');
+                throw new Error('🔧 Error de conexión con el servicio NVIDIA. Verificando configuración...');
+            }
+
+            if (!response.ok) {
+                const errorData = await response.json().catch(() => ({}));
+                console.error(`[ERROR] HTTP error! status: ${response.status}`, errorData);
+                
+                throw new Error(errorData.message || errorData.detail || `Error HTTP: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('[LOG] Respuesta recibida de NVIDIA:', data);
+            
+            // Verificar que la respuesta tenga la estructura esperada de NVIDIA
+            if (data.choices && data.choices.length > 0 && data.choices[0].message) {
+                return data;
+            } else {
+                console.error('[ERROR] Respuesta de NVIDIA sin estructura válida:', data);
+                throw new Error('🤖 Respuesta inesperada del modelo Llama 4. Inténtalo de nuevo.');
+            }
+            
+        } catch (error) {
+            console.error('[ERROR] Error en sendToAPI:', error);
+            throw error; // Re-lanzar para que sea manejado por handleSendMessage
         }
-        
-        return await response.json();
     }
     
     function addMessage(content, role) {

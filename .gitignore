@@ -40,9 +40,31 @@ venv.bak/
 # Cache files
 *.cache
 weather_cache.json
+*.log
+nvidia_server.log
 
 # Deployment scripts (contains sensitive info)
 deploy-manual.ps1
+
+# Temporary files and reports
+*.tmp
+*.temp
+*~
+.DS_Store
+Thumbs.db
+PLAYWRIGHT-ERROR-REPORT.md
+test-results/
+playwright-report/
+
+# SSH keys (NEVER commit these)
+*.pem
+*.ppk
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+betroplet*
+*_openssh
 
 # IDE
 .vscode/

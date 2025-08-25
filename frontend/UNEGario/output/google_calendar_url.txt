@@ -1,0 +1,52 @@
+UNEGario - URLs de Google Calendar
+==================================
+
+Semestre: Agosto-Diciembre 2025
+Generado: 25 de Agosto, 2025
+
+📚 HORARIO COMPLETO DEL SEMESTRE
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Horario%20Completo%20-%20ISEC%20Universidad&dates=20250818T170000/20250818T213000&details=📚%20Horario%20completo%20del%20semestre%20Agosto-Diciembre%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A🏫%20ISEC%20Universidad%0A%0A📅%20Materias%20incluidas:%0A•%20Cálculo%20Multivariable%0A•%20Algoritmos%20y%20Estructuras%20de%20Datos%0A•%20Álgebra%20Lineal%0A•%20Fundamentos%20de%20Diseño%20Digital%0A•%20Finanzas%20Empresariales%0A•%20Ingeniería,%20Ética%20y%20Sociedad%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DMO,TU,WE,TH,FR,SA%3BUNTIL%3D20251212T235959Z
+
+📚 MATERIAS INDIVIDUALES
+========================
+
+🧮 Cálculo Multivariable
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Cálculo%20Multivariable&dates=20250825T170000/20250825T180000&details=📚%20Cálculo%20Multivariable%0A👨‍🏫%20Profesor:%20ORTIZ%20REYES%20RAUL%0A%0A📅%20Horarios:%0A•%20Lunes:%2017:00%20-%2018:00%0A•%20Miércoles:%2017:30%20-%2018:00%0A%0A🏫%20ISEC%20Universidad%20-%20Semestre%20Ago-Dic%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=Aula%20205%20-%20ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DMO,WE%3BUNTIL%3D20251212T235959Z
+
+💻 Algoritmos y Estructuras de Datos
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Algoritmos%20y%20Estructuras%20de%20Datos&dates=20250826T173000/20250826T180000&details=📚%20Algoritmos%20y%20Estructuras%20de%20Datos%0A👨‍🏫%20Profesor:%20PEÑA%20OLIVO%20CRISTÓBAL%0A%0A📅%20Horarios:%0A•%20Martes:%2017:30%20-%2018:00%0A•%20Sábado:%2007:00%20-%2010:00%0A%0A🏫%20ISEC%20Universidad%20-%20Semestre%20Ago-Dic%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=Lab%20Sistemas%20-%20ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DTU,SA%3BUNTIL%3D20251212T235959Z
+
+📐 Álgebra Lineal
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Álgebra%20Lineal&dates=20250826T180000/20250826T190000&details=📚%20Álgebra%20Lineal%0A👨‍🏫%20Profesor:%20LARA%20USCANGA%20SERGIO%20TULIO%0A%0A📅%20Horarios:%0A•%20Martes:%2018:00%20-%2019:00%0A•%20Miércoles:%2018:00%20-%2019:00%0A•%20Viernes:%2017:00%20-%2018:00%0A%0A🏫%20ISEC%20Universidad%20-%20Semestre%20Ago-Dic%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=Aula%20102%20-%20ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DTU,WE,FR%3BUNTIL%3D20251212T235959Z
+
+🎨 Fundamentos de Diseño Digital
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fundamentos%20de%20Diseño%20Digital&dates=20250826T190000/20250826T200000&details=📚%20Fundamentos%20de%20Diseño%20Digital%0A👨‍🏫%20Profesor:%20AGUILAR%20VELA%20ÁLVARO%0A%0A📅%20Horarios:%0A•%20Martes:%2019:00%20-%2020:00%0A•%20Martes:%2021:00%20-%2021:30%0A•%20Miércoles:%2019:00%20-%2020:00%0A•%20Jueves:%2019:00%20-%2020:00%0A%0A🏫%20ISEC%20Universidad%20-%20Semestre%20Ago-Dic%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=Lab%20Diseño%20-%20ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DTU,WE,TH%3BUNTIL%3D20251212T235959Z
+
+💰 Finanzas Empresariales
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Finanzas%20Empresariales&dates=20250825T200000/20250825T213000&details=📚%20Finanzas%20Empresariales%0A👨‍🏫%20Profesor:%20ARROYO%20SANCHEZ%20OSCAR%20RAYMUNDO%0A%0A📅%20Horarios:%0A•%20Lunes:%2020:00%20-%2021:30%0A•%20Martes:%2020:00%20-%2021:00%0A•%20Miércoles:%2020:00%20-%2021:30%0A•%20Jueves:%2021:00%20-%2021:30%0A%0A🏫%20ISEC%20Universidad%20-%20Semestre%20Ago-Dic%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=Aula%20301%20-%20ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DMO,TU,WE,TH%3BUNTIL%3D20251212T235959Z
+
+⚖️ Ingeniería, Ética y Sociedad
+https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ingeniería,%20Ética%20y%20Sociedad&dates=20250828T200000/20250828T210000&details=📚%20Ingeniería,%20Ética%20y%20Sociedad%0A👨‍🏫%20Profesor:%20CAMPOAMOR%20ROLDAN%20SERGIO%0A%0A📅%20Horarios:%0A•%20Jueves:%2020:00%20-%2021:00%0A•%20Viernes:%2020:00%20-%2021:30%0A•%20Sábado:%2010:00%20-%2013:00%0A%0A🏫%20ISEC%20Universidad%20-%20Semestre%20Ago-Dic%202025%0A🎓%20Ingeniería%20en%20Inteligencia%20Artificial%0A%0A⚠️%20Días%20festivos%20excluidos%20automáticamente&location=Aula%20203%20-%20ISEC%20Universidad&recur=FREQ%3DWEEKLY%3BBYDAY%3DTH,FR,SA%3BUNTIL%3D20251212T235959Z
+
+📊 ESTADÍSTICAS DEL SEMESTRE
+============================
+Total de materias: 6
+Total de horas por semana: 22.5
+Total de créditos: 24
+Promedio de horas por día: 4.5
+
+🏫 INFORMACIÓN DE CONTACTO
+=========================
+Universidad: ISEC Universidad
+Carrera: Ingeniería en Inteligencia Artificial
+Estudiante: Edson Alberto Herrera Cervantes
+Semestre: Agosto-Diciembre 2025
+
+⚠️ NOTAS IMPORTANTES
+===================
+- Las URLs generan eventos recurrentes hasta el 12 de diciembre de 2025
+- Los días festivos están excluidos automáticamente en Google Calendar
+- Cada materia incluye información del profesor y aula asignada
+- Las fechas pueden ajustarse según el calendario académico oficial
+
+📅 Última actualización: 25 de Agosto, 2025
