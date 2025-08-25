@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdBetoSolutions - Chat con Llama 4</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <meta name="description" content="Chat interactivo con Meta Llama 4 Maverick via NVIDIA NIM Service">
+    <meta name="keywords" content="llama4, nvidia nim, chat, ia, edbetosolutions">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="brand">
+                    <span class="logo">🦙</span>
+                    <h1>EdBetoSolutions <span class="brand-highlight">Llama 4</span></h1>
+                </div>
+                <div class="header-controls">
+                    <div class="status-indicator" id="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Conectando...</span>
+                    </div>
+                    <button class="settings-btn" id="settings-btn" title="Configuración">
+                        ⚙️
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="welcome-message">
+                    <div class="welcome-content">
+                        <div class="welcome-icon">🚀</div>
+                        <h2>¡Bienvenido al Chat con Llama 4!</h2>
+                        <p>Soy un asistente de IA potenciado por <strong>Meta Llama 4 Maverick</strong> a través de NVIDIA NIM Service.</p>
+                        <p>Puedo ayudarte con programación, análisis, escritura creativa, resolución de problemas y mucho más.</p>
+                        
+                        <!-- Quick Suggestions -->
+                        <div class="suggestions">
+                            <h3>💡 Algunas cosas que puedes preguntarme:</h3>
+                            <div class="suggestion-chips">
+                                <span class="chip" data-suggestion="Explícame qué es la inteligencia artificial y cómo funciona">
+                                    🤖 ¿Qué es la IA?
+                                </span>
+                                <span class="chip" data-suggestion="Ayúdame a escribir código Python para un chatbot básico">
+                                    💻 Código Python
+                                </span>
+                                <span class="chip" data-suggestion="Dame consejos para aprender programación desde cero">
+                                    📚 Aprender programación
+                                </span>
+                                <span class="chip" data-suggestion="Cuéntame sobre las últimas tendencias en tecnología e IA">
+                                    🔬 Tendencias tech
+                                </span>
+                                <span class="chip" data-suggestion="Ayúdame a resolver un problema de lógica o matemáticas">
+                                    🧮 Resolver problemas
+                                </span>
+                                <span class="chip" data-suggestion="Escribe un ensayo creativo sobre el futuro de la tecnología">
+                                    ✍️ Escritura creativa
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Features List -->
+                        <div class="features">
+                            <h3>✨ Características:</h3>
+                            <ul>
+                                <li>💬 Conversaciones contextuales con memoria</li>
+                                <li>🔧 Soporte para código y formateo</li>
+                                <li>📱 Interfaz responsive y moderna</li>
+                                <li>⚡ Respuestas rápidas con NVIDIA NIM</li>
+                                <li>🔒 Seguro y privado</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="chat-input">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="user-input" 
+                            placeholder="Escribe tu mensaje aquí... (Enter para enviar, Shift+Enter para nueva línea)"
+                            rows="1"
+                            maxlength="2000"
+                        ></textarea>
+                        <div class="input-actions">
+                            <button id="clear-button" class="action-btn clear-btn" title="Limpiar conversación">
+                                🗑️
+                            </button>
+                            <button id="send-button" class="action-btn send-btn" title="Enviar mensaje">
+                                <span class="send-icon">➤</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Input Info -->
+                    <div class="input-info">
+                        <div class="model-info">
+                            <span class="model-badge">Powered by Meta Llama 4 Maverick via NVIDIA NIM</span>
+                        </div>
+                        <div class="input-meta">
+                            <span class="char-counter" id="char-counter">0/2000</span>
+                            <span class="keyboard-hint">Enter para enviar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Settings Modal -->
+        <div class="modal" id="settings-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>⚙️ Configuración</h3>
+                    <button class="modal-close" id="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="temperature-slider">Temperatura (Creatividad):</label>
+                        <input type="range" id="temperature-slider" min="0" max="1" step="0.1" value="0.7">
+                        <span id="temperature-value">0.7</span>
+                    </div>
+                    <div class="setting-group">
+                        <label for="max-tokens-input">Máximo de tokens:</label>
+                        <input type="number" id="max-tokens-input" min="50" max="1000" value="512">
+                    </div>
+                    <div class="setting-group">
+                        <label>
+                            <input type="checkbox" id="auto-scroll-checkbox" checked>
+                            Auto-scroll al final
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>&copy; 2025 <strong>EdBetoSolutions</strong>. Desarrollado con ❤️ y tecnología NVIDIA NIM.</p>
+                <div class="footer-links">
+                    <a href="https://github.com/Edbeto13" target="_blank">GitHub</a>
+                    <span>•</span>
+                    <a href="#" id="api-docs-link">API Docs</a>
+                    <span>•</span>
+                    <a href="#" id="about-link">Acerca de</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/chat.js"></script>
+    <script src="/static/js/ui.js"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 Modelos de datos usando Pydantic
 """
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 
 class Message(BaseModel):
     """Modelo para un mensaje del chat"""
@@ -16,14 +16,20 @@ class ChatRequest(BaseModel):
     max_tokens: Optional[int] = Field(512, description="Máximo de tokens")
     temperature: Optional[float] = Field(0.7, description="Temperatura de generación")
 
+class Choice(BaseModel):
+    """Modelo para una opción de respuesta"""
+    message: Message
+    finish_reason: Optional[str] = None
+    index: Optional[int] = None
+
 class ChatResponse(BaseModel):
-    """Modelo para la respuesta del chat"""
+    """Modelo para respuesta del chat"""
     id: Optional[str] = None
     object: Optional[str] = None
     created: Optional[int] = None
     model: Optional[str] = None
-    choices: List[dict] = []
-    usage: Optional[dict] = None
+    choices: List[Choice] = []
+    usage: Optional[Dict[str, Any]] = None
 
 class StatusResponse(BaseModel):
     """Modelo para la respuesta de estado"""

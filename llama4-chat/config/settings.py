@@ -12,21 +12,33 @@ class Config:
     # API de NVIDIA NIM
     NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY")
     NVIDIA_API_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
-    NVIDIA_MODEL = "meta/llama-4-maverick-17b-128e-instruct"
+    NVIDIA_MODEL = os.getenv("NVIDIA_MODEL", "meta/llama-4-maverick-17b-128e-instruct")
     
     # Servidor
-    HOST = "0.0.0.0"
-    PORT = 8000
-    DEBUG = True
-    RELOAD = True
+    HOST = os.getenv("HOST", "0.0.0.0")
+    PORT = int(os.getenv("PORT", 8000))
+    DEBUG = os.getenv("DEBUG", "True").lower() == "true"
+    RELOAD = os.getenv("RELOAD", "True").lower() == "true"
     
     # Chat configuración
-    MAX_TOKENS = 512
-    DEFAULT_TEMPERATURE = 0.7
-    MAX_CHAR_LIMIT = 2000
+    MAX_TOKENS = int(os.getenv("MAX_TOKENS", 1024))
+    DEFAULT_TEMPERATURE = float(os.getenv("DEFAULT_TEMPERATURE", 0.7))
+    MAX_CHAR_LIMIT = int(os.getenv("MAX_CHAR_LIMIT", 8000))
     
     # Timeouts
     API_TIMEOUT = 30
+    
+    # CORS - Configuración dinámica
+    @property
+    def CORS_ORIGINS(self):
+        if self.DEBUG:
+            return ["*"]  # Desarrollo
+        else:
+            return [
+                "https://llama4.edbetosolutions.com",
+                "https://edbetosolutions.com",
+                "http://llama4.edbetosolutions.com"
+            ]
     
     # Paths
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))

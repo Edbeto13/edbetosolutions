@@ -27,15 +27,15 @@ app = FastAPI(
 # Configurar CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # En producción, cambiar por dominios específicos
+    allow_origins=config.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Montar archivos estáticos
-frontend_dir = os.path.join(os.path.dirname(__file__), "frontend")
-app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
+static_dir = os.path.join(os.path.dirname(__file__), "static")
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # Inicializar cliente NIM
 try:
@@ -50,7 +50,7 @@ except Exception as e:
 async def serve_index():
     """Sirve la página principal del chat"""
     try:
-        html_path = os.path.join(frontend_dir, "index.html")
+        html_path = os.path.join(os.path.dirname(__file__), "templates", "index.html")
         with open(html_path, "r", encoding="utf-8") as f:
             html_content = f.read()
         return HTMLResponse(content=html_content)

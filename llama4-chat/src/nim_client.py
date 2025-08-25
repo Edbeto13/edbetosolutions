@@ -65,9 +65,9 @@ class NimClient:
             response.raise_for_status()
             
             if stream:
-                return response
+                return {"stream_response": response}
             else:
-                return response.json()
+                return response.json() if isinstance(response.json(), dict) else {"response": response.json()}
                 
         except requests.exceptions.RequestException as e:
             return {"error": f"Error de conexión: {str(e)}"}
@@ -79,8 +79,8 @@ class NimClient:
         try:
             test_messages = [{"role": "user", "content": "Test"}]
             response = self.chat_completion(test_messages, max_tokens=10)
-            return "error" not in response and "choices" in response
-        except:
+            return isinstance(response, dict) and "error" not in response and "choices" in response
+        except Exception:
             return False
     
     def get_status(self) -> Dict[str, str]:
