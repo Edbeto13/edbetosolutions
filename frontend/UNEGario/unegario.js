@@ -236,64 +236,14 @@ async function loadHorarioData() {
         if (response.ok) {
             const data = await response.json();
             console.log('📊 Datos cargados desde JSON generado');
-            
-            // Convertir datos JSON a formato esperado por renderSchedule
-            const convertedData = convertJSONToHorarioData(data);
-            
-            // Validar que la conversión retornó un array
-            if (Array.isArray(convertedData) && convertedData.length > 0) {
-                console.log('✅ Conversión exitosa:', convertedData.length, 'clases');
-                return convertedData;
-            } else {
-                console.warn('⚠️ Conversión no retornó array válido, usando datos estáticos');
-                return horarioData;
-            }
+            return data;
         }
     } catch (error) {
-        console.warn('⚠️ No se pudo cargar JSON dinámico, usando datos estáticos:', error);
+        console.warn('⚠️ No se pudo cargar JSON dinámico, usando datos estáticos');
     }
     
     // Fallback a datos estáticos si no se puede cargar el JSON
     return horarioData;
-}
-
-// Función para convertir JSON estructurado a formato de array para renderSchedule
-function convertJSONToHorarioData(jsonData) {
-    const horarioArray = [];
-    
-    // Mapeo de días en español a nombres esperados por el sistema
-    const dayMapping = {
-        'lunes': 'Lunes',
-        'martes': 'Martes', 
-        'miercoles': 'Miércoles',
-        'jueves': 'Jueves',
-        'viernes': 'Viernes',
-        'sabado': 'Sábado',
-        'domingo': 'Domingo'
-    };
-    
-    // Convertir horario_semanal (objeto por días) a array plano
-    if (jsonData.horario_semanal && typeof jsonData.horario_semanal === 'object') {
-        Object.entries(jsonData.horario_semanal).forEach(([dia, clases]) => {
-            const diaFormateado = dayMapping[dia] || dia.charAt(0).toUpperCase() + dia.slice(1);
-            
-            if (Array.isArray(clases)) {
-                clases.forEach(clase => {
-                    horarioArray.push({
-                        dia: diaFormateado,
-                        hora_inicio: clase.inicio,
-                        hora_fin: clase.fin,
-                        materia: clase.materia,
-                        profesor: clase.profesor,
-                        tipo: "Clase"
-                    });
-                });
-            }
-        });
-    }
-    
-    console.log('🔄 Datos convertidos:', horarioArray.length, 'clases encontradas');
-    return horarioArray;
 }
 
 // Función para cargar URL de Google Calendar dinámicamente
@@ -316,16 +266,6 @@ async function loadCalendarURL() {
 // Función para renderizar el horario
 function renderSchedule(horarioDataToRender = horarioData) {
     const scheduleContent = document.getElementById('scheduleContent');
-    
-    // Validar que horarioDataToRender sea un array
-    if (!Array.isArray(horarioDataToRender)) {
-        console.error('❌ Error: horarioDataToRender no es un array:', horarioDataToRender);
-        console.log('Tipo recibido:', typeof horarioDataToRender);
-        return;
-    }
-    
-    console.log('✅ Renderizando horario con', horarioDataToRender.length, 'clases');
-    
     let currentDay = '';
     let daySection = null;
     let dayClasses = null;
