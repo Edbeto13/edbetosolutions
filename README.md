@@ -12,14 +12,14 @@ Portafolio profesional de soluciones tecnológicas innovadoras, aplicaciones web
 edbetosolutions/
 │
 ├── 🏠 SITIO WEB PRINCIPAL
-│   ├── index.html                 # Landing page principal
+│   ├── index.html                 # Redirección automática al portafolio
 │   ├── package.json              # Configuración del proyecto
 │   └── README.md                 # Este archivo
 │
 ├── 🎨 FRONTEND APPLICATIONS
 │   └── frontend/
-│       ├── Portafolio/           # 🎯 Portal principal de proyectos
-│       │   ├── index.html        # → Vista de todos los proyectos
+│       ├── Portafolio/           # 🎯 Portal principal de proyectos (PÁGINA PRINCIPAL)
+│       │   ├── index.html        # → Landing page completa del sitio
 │       │   └── README.md         # → Documentación del portafolio
 │       │
 │       ├── clima/                # 🌦️ Sistema Meteorológico CDMX

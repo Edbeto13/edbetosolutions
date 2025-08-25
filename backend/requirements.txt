@@ -1,0 +1,20 @@
+# Requirements para Clima CDMX Backend y UNEGario
+# Author: EdbETO Solutions Team
+# 
+# Bibliotecas usadas (incluidas en Python estándar):
+# - http.server (servidor HTTP básico)
+# - json (manejo de JSON)
+# - urllib.parse (parsing de URLs)
+# - datetime (manejo de fechas)
+# - os (variables de entorno)
+#
+# Dependencias requeridas:
+requests>=2.25.0  # Para acceder a API de Conagua y otros servicios web
+openpyxl>=3.0.0   # Para UNEGario - manejo de archivos Excel
+#
+# Para instalación de dependencias:
+# pip install -r requirements.txt
+#
+# El servidor principal (api_server.py) depende de requests para obtener datos
+# de Conagua y otros proveedores meteorológicos.
+# UNEGario depende de openpyxl para procesar archivos Excel de horarios.

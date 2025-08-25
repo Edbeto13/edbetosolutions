@@ -4,7 +4,7 @@
 📁 edbetosolutions/
 │
 ├── 🌐 SITIO WEB
-│   ├── 🏠 index.html                     # Landing page principal
+│   ├── 🏠 index.html                     # Redirección al portafolio principal
 │   ├── 📋 package.json                   # Configuración del proyecto
 │   ├── 📖 README.md                      # Documentación principal
 │   ├── 📝 .editorconfig                  # Configuración del editor
@@ -14,8 +14,8 @@
 ├── 🎨 APLICACIONES FRONTEND
 │   └── 📂 frontend/
 │       │
-│       ├── 🎯 Portafolio/               # Portal de proyectos
-│       │   ├── 📄 index.html            # Vista de todos los proyectos
+│       ├── 🎯 Portafolio/               # Portal de proyectos (PÁGINA PRINCIPAL)
+│       │   ├── 📄 index.html            # Landing page completa del sitio
 │       │   └── 📖 README.md             # Documentación del portafolio
 │       │
 │       ├── 🌦️ clima/                    # Sistema Meteorológico CDMX
@@ -59,13 +59,69 @@
 │   ├── 🚀 DEPLOYMENT.md                # Guía de despliegue
 │   └── 📊 PROJECT-STRUCTURE.md         # Este archivo
 │
-└── 🔮 FUTURAS EXPANSIONES
-    └── 📁 backend/                     # APIs y servicios (próximamente)
-        └── 🦙 llama4/                  # API del chat con Llama 4
-            ├── 🐍 main.py              # Punto de entrada
-            ├── 📁 api/                 # Endpoints REST
-            ├── 📁 core/                # Configuración central
-            └── 📁 services/            # Servicios de negocio
+├── 🔧 BACKEND SERVICES
+│   └── 📁 backend/
+│       │
+│       ├── 🐍 CÓDIGO PRINCIPAL
+│       │   ├── ⚡ api_server.py              # Servidor API principal
+│       │   ├── 🌤️ conagua_collector.py       # Recolector datos CONAGUA
+│       │   ├── 📊 conagua_timeseries.py      # Series temporales
+│       │   ├── 📅 UNEGario_GoogleCalendar.py # Google Calendar API
+│       │   ├── 🏗️ build_unegario.py          # Constructor UNEGario
+│       │   ├── 🧪 test_conagua.py            # Tests y validaciones
+│       │   ├── 📋 requirements.txt           # Dependencias Python
+│       │   └── 💾 weather_cache.json         # Cache meteorológico
+│       │
+│       ├── ⚙️ CONFIGURACIÓN
+│       │   └── 📁 config/
+│       │       ├── 🌐 nginx-production.conf     # Config Nginx principal
+│       │       ├── 🔧 nginx-hydredelback.conf   # Config Nginx alternativa
+│       │       └── 🔄 conagua-api.service       # Servicio systemd
+│       │
+│       ├── 🚀 SCRIPTS Y DEPLOYMENT
+│       │   ├── 📁 scripts/
+│       │   │   ├── 🛠️ install-backend.sh        # Instalación automática
+│       │   │   ├── 💻 Deploy-UNEGario.ps1       # Deploy (PowerShell)
+│       │   │   └── 🐧 deploy-unegario.sh        # Deploy (Bash)
+│       │   │
+│       │   └── 📁 deploy/
+│       │       ├── 📖 DEPLOYMENT.md             # Guía de deployment
+│       │       ├── 🌐 edbetosolutions.tech.new  # Config dominio
+│       │       └── 📁 docs/                     # Documentación adicional
+│       │
+│       └── 📖 DOCUMENTACIÓN
+│           ├── 📄 README.md                     # Documentación principal
+│           ├── 📄 README-BACKEND.md             # Guía detallada
+│           └── 📄 INSTRUCCIONES.md              # Instrucciones de uso
+│
+└── � BACKEND SERVICES
+    └── 📁 backend/                     # APIs y servicios backend
+        ├── 🐍 api_server.py            # Servidor API principal
+        ├── 🏗️ build_unegario.py        # Constructor UNEGario
+        ├── 🌊 conagua_collector.py     # Recolector datos CONAGUA
+        ├── 📊 conagua_timeseries.py    # Series temporales clima
+        ├── 🧪 test_conagua.py          # Tests del API CONAGUA
+        ├── 📅 UNEGario_GoogleCalendar.py # Integración Google Calendar
+        ├── 📋 requirements.txt         # Dependencias Python
+        ├── 🗂️ weather_cache.json      # Cache de datos climáticos
+        ├── 📄 sync-assets.ps1         # Script sincronización
+        │
+        ├── � DOCUMENTACIÓN
+        │   ├── 📋 README-BACKEND.md    # Documentación principal
+        │   ├── 📝 INSTRUCCIONES.md     # Instrucciones específicas
+        │   ├── � CV-DOCUMENTACION.md  # Documentación CV
+        │   └── 🚀 UNEGario_DEPLOYMENT.md # Guía deployment UNEGario
+        │
+        ├── ⚙️ config/                  # Configuraciones del servidor
+        │   ├── 🌐 nginx-edbetosolutions.conf # Config nginx principal
+        │   ├── 🌐 nginx-production.conf # Config nginx producción
+        │   ├── 🌐 nginx-hydredelback.conf # Config nginx Hydred
+        │   └── � conagua-api.service  # Servicio systemd CONAGUA
+        │
+        └── 📜 scripts/                 # Scripts de deployment
+            ├── 🚀 Deploy-UNEGario.ps1 # Deploy PowerShell
+            ├── 🚀 deploy-unegario.sh  # Deploy Bash
+            └── 📦 install-backend.sh  # Instalación backend
 ```
 
 ## 🎯 Navegación de Archivos

@@ -1,0 +1,16 @@
+[Unit]
+Description=Conagua Weather API Server
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/hydredelback/src/backend
+ExecStart=/usr/bin/python3 api_server.py
+Restart=always
+RestartSec=10
+Environment=PYTHONPATH=/var/www/hydredelback/src/backend
+
+[Install]
+WantedBy=multi-user.target

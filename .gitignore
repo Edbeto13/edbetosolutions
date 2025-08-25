@@ -37,6 +37,10 @@ venv.bak/
 .env.test.local
 .env.production.local
 
+# Cache files
+*.cache
+weather_cache.json
+
 # Deployment scripts (contains sensitive info)
 deploy-manual.ps1
 
