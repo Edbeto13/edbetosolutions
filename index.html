@@ -411,7 +411,6 @@
                     <li><code>frontend/micveahc/</code> - CV interactivo profesional</li>
                     <li><code>frontend/UNEGario/</code> - Gestión de horarios académicos</li>
                     <li><code>frontend/Portafolio/</code> - Portfolio personal con React</li>
-                    <li><code>shared/</code> - Utilidades y componentes compartidos</li>
                 </ul>
                 
                 <p><strong>Tecnologías Utilizadas:</strong></p>
@@ -445,8 +444,18 @@
 
     <div id="statusMessage" class="status-message"></div>
     
-    <script src="shared/js/common.js"></script>
     <script>
+        // Función para mostrar notificaciones
+        function showNotification(message, type = 'info') {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message ${type} show`;
+            
+            setTimeout(() => {
+                statusDiv.classList.remove('show');
+            }, 3000);
+        }
+        
         // Inicialización de la página
         document.addEventListener('DOMContentLoaded', function() {
             showNotification('Portfolio cargado correctamente', 'success');
