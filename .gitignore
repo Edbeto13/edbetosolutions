@@ -62,8 +62,8 @@ out/
 config/local.json
 config/development.json
 
-# OCULTAR ARCHIVOS DE DESARROLLO Y BACKEND
-backend/
+# OCULTAR ARCHIVOS DE DESARROLLO (COMENTADO PARA PERMITIR BACKEND)
+# backend/  # Ahora permitimos el backend en Git
 docs/
 scripts/
 shared/

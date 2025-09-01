@@ -1,0 +1,26 @@
+# Requirements para Backend - EdbETO Solutions
+# Author: EdbETO Solutions Team
+# 
+# Dependencias principales para el backend del portfolio
+#
+# === DEPENDENCIAS REQUERIDAS ===
+requests>=2.25.0  # Para acceso a APIs externas (Conagua, etc.)
+openpyxl>=3.0.0   # Para UNEGario - manejo de archivos Excel
+python-dotenv>=0.19.0  # Para manejo de variables de entorno
+
+# === DEPENDENCIAS OPCIONALES ===
+# flask>=2.3.0  # Si se migra a Flask en el futuro
+# pandas>=1.5.0  # Para análisis de datos meteorológicos avanzado
+# numpy>=1.21.0  # Para cálculos matemáticos en series temporales
+
+# === PARA DESARROLLO ===
+# pytest>=7.0.0  # Para testing
+# black>=22.0.0  # Para formateo de código
+
+# Para instalación de dependencias:
+# pip install -r requirements.txt
+#
+# El servidor principal (api_server.py) depende de requests para obtener datos
+# de Conagua y otros proveedores meteorológicos.
+# UNEGario depende de openpyxl para procesar archivos Excel de horarios.
+# config.py depende de python-dotenv para cargar variables de entorno.
