@@ -22,10 +22,10 @@
 
 ```bash
 # Conectar al servidor
-ssh -i "C:\betroplet_openssh" root@146.190.249.76
+ssh -i "$SSH_KEY_PATH" $SERVER_USER@$SERVER_IP
 
 # Una vez conectado, ejecutar:
-cd /var/www/html/edbetosolutions
+cd $REMOTE_PATH
 git pull origin main
 chown -R www-data:www-data /var/www/html/edbetosolutions
 chmod -R 755 /var/www/html/edbetosolutions

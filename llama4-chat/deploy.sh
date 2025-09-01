@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Deploy script para Llama4 Chat en el droplet
-# Incluye limpieza de versiones anteriores
 # Uso: ./deploy.sh
 
 echo "🚀 Iniciando deployment de Llama4 Chat..."
@@ -16,7 +15,6 @@ NC='\033[0m' # No Color
 APP_DIR="/var/www/llama4-chat"
 SERVICE_NAME="llama4-chat"
 NGINX_CONF="/etc/nginx/sites-available/llama4-chat"
-OLD_SERVICES=("llama4" "nvidia-api" "api-server")  # Servicios antiguos a limpiar
 
 # Función para logging
 log() {
@@ -36,36 +34,6 @@ if [ "$EUID" -ne 0 ]; then
     error "Este script debe ejecutarse como root (sudo)"
     exit 1
 fi
-
-# PASO 1: Limpiar versiones anteriores
-log "🧹 Limpiando versiones anteriores..."
-
-# Detener servicios antiguos
-for service in "${OLD_SERVICES[@]}"; do
-    if supervisorctl status $service &>/dev/null; then
-        warning "Deteniendo servicio antiguo: $service"
-        supervisorctl stop $service
-        supervisorctl remove $service
-        rm -f /etc/supervisor/conf.d/$service.conf
-    fi
-done
-
-# Limpiar configuraciones nginx antiguas
-for conf in /etc/nginx/sites-enabled/*llama* /etc/nginx/sites-enabled/*nvidia*; do
-    if [ -f "$conf" ]; then
-        warning "Eliminando configuración nginx antigua: $conf"
-        rm -f "$conf"
-    fi
-done
-
-# Limpiar directorios antiguos
-OLD_DIRS=("/var/www/llama4" "/var/www/nvidia-api" "/var/www/api-server")
-for dir in "${OLD_DIRS[@]}"; do
-    if [ -d "$dir" ]; then
-        warning "Eliminando directorio antiguo: $dir"
-        rm -rf "$dir"
-    fi
-done
 
 # Crear directorio de aplicación
 log "Creando directorio de aplicación..."

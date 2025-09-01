@@ -1,0 +1,86 @@
+# Variables sensibles
+.env
+.env.local
+.env.production
+.env.staging
+
+# Claves SSH y certificados
+*.key
+*.pem
+*.cert
+ssh_keys/
+
+# Backups y archivos temporales
+backups/
+*.backup
+*.tmp
+*.temp
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Cache
+.cache/
+*.cache
+.parcel-cache/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Database
+*.db
+*.sqlite
+*.sql
+
+# Configuraciones locales
+config/local.json
+config/development.json
+
+# OCULTAR ARCHIVOS DE DESARROLLO Y BACKEND
+backend/
+docs/
+scripts/
+shared/
+llama4-chat/
+Llama4/
+
+# Archivos de desarrollo y diagnóstico
+CHECKLIST.md
+CLEANUP-PLAN.md
+CLEANUP-REPORT.md
+deploy-manual.ps1
+DEPLOYMENT.md
+DROPLET-DIAGNOSTICO.md
+PLAYWRIGHT-ERROR-REPORT.md
+UNEGARIO-MAINTENANCE-PLAN.md
+VSCODE-SSH-TUTORIAL.md
+
+# Configuraciones de servidor
+*.service
+nginx-*.conf

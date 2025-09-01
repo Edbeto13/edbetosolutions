@@ -1,51 +1,119 @@
-# EdbETO Solutions - Frontend Components
+# EdbETO Solutions - Portfolio Frontend
 
-Este repositorio contiene los componentes frontend desarrollados por EdbETO Solutions.
+Un portafolio moderno y responsive que muestra diferentes aplicaciones web desarrolladas con tecnologías frontend modernas.
 
-##  Estructura del Repositorio
+## Aplicaciones Disponibles
 
-`
-.
- clima/                   # Aplicaci�n de monitoreo meteorol�gico CDMX
-    clima-production.html # Interfaz principal
-    script-fixed.js      # L�gica JavaScript
-    READMEclima.md       # Documentaci�n espec�fica
-    ...
+### 🌦️ Sistema Meteorológico CDMX
+**Ubicación:** `frontend/clima/`  
+**Descripción:** Aplicación web que muestra datos meteorológicos en tiempo real de la Ciudad de México utilizando APIs públicas.
 
- micveahc/                # Curr�culum Vitae Web
-    micveahc.html        # P�gina principal HTML
-    micveahc.js          # Funcionalidad JavaScript
-    READMEmicveahc.md    # Documentaci�n espec�fica
-    ...
+**Características:**
+- Datos meteorológicos en tiempo real
+- Interfaz responsive y moderna
+- Visualización de datos con gráficos interactivos
+- Optimizado para dispositivos móviles
 
- UNEGario/                # Sistema de Gesti�n de Horarios Universitarios
-     UNEGario.html        # P�gina principal
-     unegario.js          # L�gica JavaScript
-     READMEunegario.md    # Documentaci�n espec�fica
-     ...
-`
+**Demo:** [https://edbetosolutions.tech/clima](https://edbetosolutions.tech/clima)
 
-##  Documentaci�n
+### 👨‍💼 Currículum Vitae Interactivo
+**Ubicación:** `frontend/micveahc/`  
+**Descripción:** CV web interactivo con diseño profesional y efectos visuales modernos.
 
-Para informaci�n espec�fica sobre cada componente, consulta los archivos README correspondientes:
+**Características:**
+- Diseño completamente responsive
+- Animaciones CSS avanzadas
+- Información profesional actualizada
+- Interfaz intuitiva y atractiva
 
-- [Documentaci�n de Clima](./clima/READMEclima.md)
-- [Documentaci�n de MicVeaHC](./micveahc/READMEmicveahc.md)
-- [Documentaci�n de UNEGario](./UNEGario/READMEunegario.md)
+**Demo:** [https://edbetosolutions.tech/micveahc](https://edbetosolutions.tech/micveahc)
 
-##  Caracter�sticas Generales
+### 📚 UNEGario - Sistema de Horarios Universitarios
+**Ubicación:** `frontend/UNEGario/`  
+**Descripción:** Aplicación para gestión y visualización de horarios académicos con integración a Google Calendar.
 
-- **Dise�o Responsive**: Todos los componentes est�n optimizados para diferentes tama�os de pantalla
-- **JavaScript Moderno**: Uso de ES6+ y t�cnicas modernas de desarrollo frontend
-- **Visualizaciones Avanzadas**: Gr�ficos, mapas y elementos visuales interactivos
-- **Integraci�n con API**: Comunicaci�n con backends para datos din�micos
+**Características:**
+- Visualización clara de horarios semanales
+- Integración con Google Calendar
+- Información de profesores y materias
+- Interfaz optimizada para estudiantes
 
-##  Licencia
+**Demo:** [https://edbetosolutions.tech/UNEGario](https://edbetosolutions.tech/UNEGario)
 
-Este proyecto est� licenciado bajo la [Licencia MIT](LICENSE) - consulta el archivo LICENSE para m�s detalles.
+### 🎨 Portafolio Principal
+**Ubicación:** `frontend/Portafolio/`  
+**Descripción:** Landing page principal del portafolio con navegación a todas las aplicaciones.
+
+**Características:**
+- Diseño moderno y atractivo
+- Navegación intuitiva
+- Responsive design
+- Optimizado para SEO
+
+**Demo:** [https://edbetosolutions.tech](https://edbetosolutions.tech)
+
+## Tecnologías Utilizadas
+
+- **HTML5** - Estructura semántica moderna
+- **CSS3** - Estilos avanzados y animaciones
+- **JavaScript ES6+** - Funcionalidad interactiva
+- **APIs REST** - Integración con servicios externos
+- **Responsive Design** - Compatible con todos los dispositivos
+
+## Características Técnicas
+
+- ✅ **Responsive Design** - Optimizado para móviles, tablets y desktop
+- ✅ **Optimización SEO** - Meta tags y estructura semántica
+- ✅ **Rendimiento** - Carga rápida y eficiente
+- ✅ **Accesibilidad** - Cumple estándares web accessibility
+- ✅ **Cross-browser** - Compatible con navegadores modernos
+
+## Instalación Local
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/Edbeto13/edbetosolutions.git
+
+# Navegar al directorio
+cd edbetosolutions
+
+# Servir archivos estáticos (usando Python)
+python -m http.server 8000
+
+# O usando Node.js
+npx serve .
+
+# Abrir en navegador
+# http://localhost:8000
+```
+
+## Estructura del Proyecto
+
+```
+edbetosolutions/
+├── frontend/
+│   ├── clima/                 # Sistema meteorológico
+│   ├── micveahc/             # CV interactivo
+│   ├── UNEGario/             # Horarios universitarios
+│   └── Portafolio/           # Landing page principal
+├── index.html                # Página de entrada
+├── package.json              # Configuración del proyecto
+└── README.md                 # Documentación
+```
+
+## Contacto
+
+**Desarrollador:** Edson Alberto Herrera Castro  
+**Email:** edson.herrera@example.com  
+**GitHub:** [github.com/Edbeto13](https://github.com/Edbeto13)  
+**LinkedIn:** [linkedin.com/in/edson-herrera](https://linkedin.com/in/edson-herrera)
+
+## Licencia
+
+Este proyecto está bajo la [Licencia MIT](LICENSE) - consulta el archivo LICENSE para más detalles.
 
 ---
 
-**Desarrollado por EdbETO Solutions**
+**Desarrollado con ❤️ por EdbETO Solutions**
 
  2025 Edson Herrera
