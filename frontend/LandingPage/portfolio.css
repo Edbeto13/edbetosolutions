@@ -1,0 +1,18 @@
+/* Portfolio Landing Page Styles */
+/* Este archivo está vinculado al portfolio.html para mantener separación de archivos */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Los estilos están actualmente en portfolio.html */
+/* TODO: Extraer todos los estilos del HTML para mantener separación adecuada */
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
