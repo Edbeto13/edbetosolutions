@@ -9,7 +9,6 @@ Página principal del portafolio que muestra todos los proyectos disponibles:
 
 - **🌦️ Sistema Meteorológico CDMX** - [`../clima/`](../clima/)
 - **👨‍💼 CV Edson Herrera** - [`../micveahc/`](../micveahc/)
-- **🦙 Chat con Llama 4** - [`../llama4/`](../llama4/)
 - **📚 UNEGario** - [`../UNEGario/`](../UNEGario/)
 
 ## 🎯 Características
@@ -50,7 +49,6 @@ https://edbetosolutions.tech/frontend/Portafolio/
 Portafolio/index.html
 ├── ../clima/           → Sistema Meteorológico
 ├── ../micveahc/        → CV Web
-├── ../llama4/          → Chat IA
 └── ../UNEGario/        → Sistema Universitario
 ```
 

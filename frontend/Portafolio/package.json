@@ -6,7 +6,6 @@
   "scripts": {
     "start": "python -m http.server 8080",
     "dev": "python -m http.server 3000",
-    "backend:llama4": "cd backend/llama4 && python main.py",
     "test": "echo \"No tests specified\" && exit 0"
   },
   "repository": {
@@ -17,7 +16,6 @@
     "portfolio",
     "web-development",
     "artificial-intelligence",
-    "llama4",
     "nvidia-nim",
     "weather-api",
     "interactive-cv",

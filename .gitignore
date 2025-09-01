@@ -67,8 +67,6 @@ backend/
 docs/
 scripts/
 shared/
-llama4-chat/
-Llama4/
 
 # Archivos de desarrollo y diagnóstico
 CHECKLIST.md
